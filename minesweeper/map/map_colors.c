@@ -57,7 +57,7 @@ void	color_cell(char *cell, int font)
 	int i;
 
 	i = 0;
-	if (cell[0] == '.' || cell[0] == '*')
+	if (cell[0] == '.' || cell[0] == '*' || cell[0] == ' ')
 		i = 0;
 	else
 		i = cell[i] - '0';

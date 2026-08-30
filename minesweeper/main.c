@@ -38,12 +38,12 @@ int main(int argc, char *argv[])
 			hidden_map_display(map, pos);
 			printw(YOU_LOST);
 			refresh();
-			napms(3500);
+			napms(3000);
 			break ;
 		}
 		map_display(map, pos);
-		// printw("\nYou pushed -> '%c'\n", letter);
-		// printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
+		printw("\nYou pushed -> '%c'\n", letter);
+		printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
 		refresh();
 		napms(50); // 50 ms of pause between moves
 	}

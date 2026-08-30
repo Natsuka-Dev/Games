@@ -17,7 +17,13 @@ int	map_cursor(t_map *map, int *pos, char letter)
 	{
 		if (map->cells[*pos].hidden_val == '*')
 			return (1);
-		map->cells[*pos].val[0] = map->cells[*pos].hidden_val;
+		else if (map->cells[*pos].hidden_val == '0')
+		{
+			// map->cells[*pos].val[0] = ' ';
+			map_partial_display(map, *pos);
+		}
+		else
+			map->cells[*pos].val[0] = map->cells[*pos].hidden_val;
 	}
 	else if (letter == 'f' && (map->cells[*pos].val[0] == '.' || map->cells[*pos].val[0] == '*')) // adding or removing a flag
 		map->cells[*pos].val[0] = (map->cells[*pos].val[0] == '.') ? '*' : '.';

@@ -30,3 +30,4 @@ void	color_cell(char *cell, int font);
 int		map_cursor(t_map *map, int *pos, char letter);
 void	hidden_map_display(t_map *map, int pos);
 int		done(t_map *map);
+void	map_partial_display(t_map *map, int pos);
