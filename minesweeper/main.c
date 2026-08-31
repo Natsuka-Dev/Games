@@ -38,17 +38,17 @@ int main(int argc, char *argv[])
 			hidden_map_display(map, pos);
 			printw(YOU_LOST);
 			refresh();
-			napms(3000);
+			napms(1500);
 			break ;
 		}
 		map_display(map, pos);
-		printw("\nYou pushed -> '%c'\n", letter);
-		printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
+		// printw("\nYou pushed -> '%c'\n", letter);
+		// printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
 		refresh();
 		napms(50); // 50 ms of pause between moves
 	}
 	if (done(map))
-		printw(YOU_WON(map->x, map->y)); //Does this work?
+		printw(YOU_WON(map->x, map->y)); //Error with the message
 	getch(); // in order to see the last printw
 	endwin();
 	for (int i = 0; i < (map->x * map->y); i++)
