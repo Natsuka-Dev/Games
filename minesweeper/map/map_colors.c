@@ -63,6 +63,6 @@ void color_cell(char cell, int font)
 	else
 		i = cell - '0';
 	attron(COLOR_PAIR(i * 2 + font));
-	printw(str);
+	printw("%s", str);
 	attroff(COLOR_PAIR(i * 2 + font));
 }
