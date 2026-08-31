@@ -45,4 +45,5 @@ make
 ./minesweeper 20 15 20
 ```
 First case would generate a `9x9` map with `13%` of mines.
+
 Second would generates a personalised `20x15` map with `20%` of mines.
