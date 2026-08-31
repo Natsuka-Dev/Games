@@ -13,16 +13,16 @@ int	map_cursor(t_map *map, int *pos, char letter)
 		(*pos)++;
 	else if (letter == 'D' && *pos > 0 && *pos % (map->x)) // going left
 		(*pos)--;
-	else if (letter == 32 && map->cells[*pos].val[0] != '*') // click
+	else if (letter == 32 && map->cells[*pos].val != '*') // click
 	{
 		if (map->cells[*pos].hidden_val == '*')
 			return (1);
 		else if (map->cells[*pos].hidden_val == '0')
 			map_partial_display(map, *pos);
 		else
-			map->cells[*pos].val[0] = map->cells[*pos].hidden_val;
+			map->cells[*pos].val = map->cells[*pos].hidden_val;
 	}
-	else if (letter == 'f' && (map->cells[*pos].val[0] == '.' || map->cells[*pos].val[0] == '*')) // adding or removing a flag
-		map->cells[*pos].val[0] = (map->cells[*pos].val[0] == '.') ? '*' : '.';
+	else if (letter == 'f' && (map->cells[*pos].val == '.' || map->cells[*pos].val == '*')) // adding or removing a flag
+		map->cells[*pos].val = (map->cells[*pos].val == '.') ? '*' : '.';
 	return (0);
 }
