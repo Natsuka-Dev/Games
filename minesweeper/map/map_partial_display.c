@@ -31,5 +31,29 @@ void	map_partial_display(t_map *map, int pos)
 		if ((map->cells[pos + 1].val[0]) == '0')
 			map_partial_display(map, (pos + 1));
 	}
-	// afficher les angles
+	// if (pos - (map->x + 1) >= 0 && pos % map->x && map->cells[pos - map->x + 1].val[0] != ' ') // top left
+	// {
+	// 	map->cells[pos - (map->x + 1)].val[0] = map->cells[pos - (map->x + 1)].hidden_val;
+	// 	if (pos - (map->x + 1) >= 0 && map->cells[pos - (map->x + 1)].val[0] == '0')
+	// 		map_partial_display(map, pos - (map->x + 1));
+	// }
+	// if (pos - (map->x - 1) >= 0 && (pos + 1) % map->x && map->cells[pos - map->x - 1].val[0] != ' ') // top right
+	// {
+	// 	map->cells[pos - (map->x - 1)].val[0] = map->cells[pos - (map->x - 1)].hidden_val;
+	// 	if (pos - (map->x - 1) >= 0 && map->cells[pos - (map->x - 1)].val[0] == '0')
+	// 		map_partial_display(map, pos - (map->x - 1));
+	// }
+	// if ((pos + map->x + 1) < (map->x * map->y) && pos % map->x && map->cells[pos + map->x + 1].val[0] != ' ') // bottom left
+	// {
+	// 	map->cells[pos + map->x + 1].val[0] = map->cells[pos + map->x + 1].hidden_val;
+	// 	if ((pos + map->x + 1) < (map->x * map->y) && map->cells[pos + map->x + 1].val[0] == '0')
+	// 		map_partial_display(map, pos + map->x + 1);
+	// }
+	// if ((pos + map->x - 1) < (map->x * map->y) && (pos + 1) % map->x && map->cells[pos + map->x - 1].val[0] != ' ') // bottom right (problem)
+	// {
+	// 	map->cells[pos + map->x - 1].val[0] = map->cells[pos + map->x - 1].hidden_val;
+	// 	if ((pos + map->x - 1) < (map->x * map->y) && map->cells[pos + map->x - 1].val[0] == '0')
+	// 		map_partial_display(map, pos + map->x - 1);
+	// }
+	// display angles MISSING
 }

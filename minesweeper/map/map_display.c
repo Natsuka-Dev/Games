@@ -51,6 +51,8 @@ void	hidden_map_display(t_map *map, int pos)
 	for (int i = 0; i < ((map->x) * (map->y)); i++)
 	{
 		node = &map->cells[i];
+		if (node->hidden_val == '0')
+			map->cells[i].hidden_val = ' ';
 		if (i && !(i % (map->x)))
 			addwstr(L"│\n│ ");
 		if (i == pos)
