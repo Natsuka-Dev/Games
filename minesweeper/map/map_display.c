@@ -5,6 +5,7 @@
 
 #define WHITE_BLACK 0
 #define BLACK_WHITE 1
+#define RED_MY_FONT 6
 #define WHITE_RED 18
 
 void	map_display(t_map *map, int pos, int done)
@@ -30,6 +31,8 @@ void	map_display(t_map *map, int pos, int done)
 		}
 		else if (done && map->cells[i].hidden_val == '*')
 			color_cell(&node->hidden_val, WHITE_BLACK);
+		else if (done && map->cells[i].val[0] == '*')
+			color_cell("*", RED_MY_FONT);
 		else
 			color_cell(node->val, WHITE_BLACK);
 		printw(" ");
