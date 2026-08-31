@@ -35,12 +35,12 @@ int main(int argc, char *argv[])
 		letter = getch();
 		if (map_cursor(map, &pos, letter))
 		{
-			hidden_map_display(map, pos);
+			map_display(map, pos, 1);
 			printw(YOU_LOST);
 			refresh();
 			break ;
 		}
-		map_display(map, pos);
+		map_display(map, pos, 0);
 		printw("\nYou pushed -> '%c'\n", letter);
 		printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
 		refresh();

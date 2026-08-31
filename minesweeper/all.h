@@ -25,10 +25,9 @@ void	free_all(t_map *map);
 
 // map
 int		arg_check(int argc, char *argv[], t_map *map);
-void	map_display(t_map *map, int pos);
+void	map_display(t_map *map, int pos, int done);
 void	init_colors(void);
 void	color_cell(char *cell, int font);
 int		map_cursor(t_map *map, int *pos, char letter);
-void	hidden_map_display(t_map *map, int pos);
 int		done(t_map *map);
 void	map_partial_display(t_map *map, int pos);
