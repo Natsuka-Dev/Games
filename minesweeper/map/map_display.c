@@ -28,9 +28,9 @@ void	map_display(t_map *map, int pos)
 		if (i && !(i % (map->x)))
 			addwstr(L"│\n│ ");
 		if (i == pos)
-			color_cell(node->val, BLACK_WHITE); // node->val &node->hidden_val
+			color_cell(node->val, BLACK_WHITE);
 		else
-			color_cell(node->val, WHITE_BLACK); // node->val &node->hidden_val
+			color_cell(node->val, WHITE_BLACK);
 		printw(" ");
 	}
 	addwstr(L"│\n└");

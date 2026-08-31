@@ -1,5 +1,5 @@
 TARGET = minesweeper
-CFLAGS = -std=c23 -Wall -Wextra -Werror -D_XOPEN_SOURCE_EXTENDED
+CFLAGS = -std=c23 -Wall -Wextra -Werror -D_XOPEN_SOURCE_EXTENDED # -fsanitize=address
 SRC = $(wildcard map/*.c) $(wildcard tools/*.c) main.c
 OBJ = $(SRC:.c=.o)
 

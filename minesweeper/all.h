@@ -21,6 +21,7 @@ int		randint(t_map *map);
 void	cells_creation(t_map *map);
 void	bombs_creation(t_map *map);
 void	digits_creation(t_map *map);
+void	free_all(t_map *map);
 
 // map
 int		arg_check(int argc, char *argv[], t_map *map);
