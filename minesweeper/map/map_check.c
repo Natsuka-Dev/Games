@@ -10,7 +10,7 @@
 #define DEFAULT_X 9
 #define DEFAULT_Y 9
 
-static int errors(int argc, char *argv[])
+static int	errors(int argc, char *argv[])
 {
 	if (argc != 4)
 	{
@@ -57,10 +57,17 @@ int	arg_check(int argc, char *argv[], t_map *map)
 
 int	done(t_map *map) // WRONG
 {
+	int	mine;
+
+	mine = 0;
 	for (int i = 0; i < (map ->x * map->y); i++)
 	{
 		if (map->cells[i].val == '.')
 			return (0);
+		if (map->cells[i].val == '*')
+			mine++;
 	}
+	if (mine != map->mines)
+		return (0);
 	return (1);
 }

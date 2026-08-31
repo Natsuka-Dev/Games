@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 	if (done(map))
 		printw(YOU_WON(map->x, map->y));
 	getch();
-	napms(2000);
+	napms(1000);
 	endwin();
 	delscreen(scr);
 	free_all(map);
