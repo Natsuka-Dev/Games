@@ -2,7 +2,7 @@
 
 Welcome to my own version of the **Minesweeper**!
 
-A terminal-based Minesweeper written in **C**, built and tested on a **MacBook M5**.
+A terminal-based Minesweeper written in **C**, built and tested on a **MacBook M5**. (Does not work on Linux)
 
 ## Controls
 

@@ -10,7 +10,7 @@
 #define YOU_WON(a, b) "\nCongratulations! you managed to do a %d x %d minesweeper!\n", a, b
 #define GAME_CREDITS "\n\n\n\n\n\n\n\n\nGame Credits\nNatsuka\nTsuna\n"
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	char	letter;
 	t_map	*map;

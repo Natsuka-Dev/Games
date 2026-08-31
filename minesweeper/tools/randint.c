@@ -5,7 +5,7 @@
 
 #define ABS(nb) ((nb < 0) ? -nb : nb)
 
-int randint(t_map *map)
+int	randint(t_map *map)
 {
 	int fd;
 	int rand;

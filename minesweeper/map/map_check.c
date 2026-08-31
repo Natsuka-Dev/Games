@@ -55,7 +55,7 @@ int	arg_check(int argc, char *argv[], t_map *map)
 	return (1);
 }
 
-int	done(t_map *map) // WRONG
+int	done(t_map *map)
 {
 	int	mine;
 

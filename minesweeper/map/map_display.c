@@ -8,7 +8,7 @@
 #define RED_MY_FONT 6
 #define WHITE_RED 18
 
-void map_display(t_map *map, int pos, int done)
+void	map_display(t_map *map, int pos, int done)
 {
 	t_elem *node;
 

@@ -2,7 +2,7 @@
 
 #include "../all.h"
 
-void cells_creation(t_map *map)
+void	cells_creation(t_map *map)
 {
 	map->cells = malloc((map->x * map->y) * sizeof(t_elem));
 	if (!map->cells)
