@@ -18,10 +18,7 @@ int	map_cursor(t_map *map, int *pos, char letter)
 		if (map->cells[*pos].hidden_val == '*')
 			return (1);
 		else if (map->cells[*pos].hidden_val == '0')
-		{
-			// map->cells[*pos].val[0] = ' ';
 			map_partial_display(map, *pos);
-		}
 		else
 			map->cells[*pos].val[0] = map->cells[*pos].hidden_val;
 	}

@@ -5,7 +5,7 @@
 
 #define GAME_PRESENTATION "You can move thanks to your keyboard arrows\n\n'f' -> add a flag (or remove it)\n'Space' -> Click\n'Q' -> Quit\n\nPress any Key, Good luck!\n\n\n\nYou can also create a personalised map!\n\nEx: ./minesweeper A B C\nA = lenght\nB = width\nC = percentage of mines\n\nLenght and width must be between 9 and 100(included).\nPercentage of mines must be between 5 and 40 (included).\n"
 #define YOU_LOST "\nSorry but you failed! Better luck next time!\n"
-#define YOU_WON(a, b) "\nCongratulations! you managed to do a %d x %d minesweeper!\n"
+#define YOU_WON(a, b) "\nCongratulations! you managed to do a %d x %d minesweeper!\n", a, b
 
 int main(int argc, char *argv[])
 {
@@ -41,13 +41,11 @@ int main(int argc, char *argv[])
 			break ;
 		}
 		map_display(map, pos, 0);
-		printw("\nYou pushed -> '%c'\n", letter);
-		printw("X -> %d\nY -> %d\nMines -> %d\nPos -> %d\nHidden -> %c\n", map->x, map->y, map->mines, pos, map->cells[pos].hidden_val);
 		refresh();
 		napms(25);
 	}
 	if (done(map))
-		printw(YOU_WON(map->x, map->y)); //Error with the message
+		printw(YOU_WON(map->x, map->y));
 	getch();
 	endwin();
 	free_all(map);
