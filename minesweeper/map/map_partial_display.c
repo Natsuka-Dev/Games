@@ -1,6 +1,6 @@
 #include "../all.h"
 
-static void	map_angles_display(t_map *map, int pos)
+static void	map_angles_disp(t_map *map, int pos)
 {
 	if ((pos - map->x - 1) >= 0 && pos % map->x && map->cells[pos - map->x - 1].val[0] != ' ') // top left
 	{
@@ -28,9 +28,8 @@ static void	map_angles_display(t_map *map, int pos)
 	}
 }
 
-void	map_partial_display(t_map *map, int pos)
+static void	map_sides_disp(t_map *map, int pos)
 {
-	map->cells[pos].val[0] = ' ';
 	if ((pos - map->x) >= 0 && map->cells[pos - map->x].val[0] != ' ') // top
 	{
 		map->cells[pos - map->x].val[0] = map->cells[pos - map->x].hidden_val;
@@ -55,5 +54,11 @@ void	map_partial_display(t_map *map, int pos)
 		if ((map->cells[pos + 1].val[0]) == '0')
 			map_partial_display(map, (pos + 1));
 	}
-	map_angles_display(map, pos);
+}
+
+void	map_partial_display(t_map *map, int pos)
+{
+	map->cells[pos].val[0] = ' ';
+	map_sides_disp(map, pos);
+	map_angles_disp(map, pos);
 }
