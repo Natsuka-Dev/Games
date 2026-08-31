@@ -13,7 +13,7 @@ int	map_cursor(t_map *map, int *pos, char letter)
 		(*pos)++;
 	else if (letter == 'D' && *pos > 0 && *pos % (map->x)) // going left
 		(*pos)--;
-	else if (letter == 32 && map->cells[*pos].val[0] != '*')
+	else if (letter == 32 && map->cells[*pos].val[0] != '*') // click
 	{
 		if (map->cells[*pos].hidden_val == '*')
 			return (1);

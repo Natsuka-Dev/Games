@@ -1,5 +1,5 @@
-#include <fcntl.h> // O_RDONLY
-#include <unistd.h> // read
+#include <fcntl.h>
+#include <unistd.h>
 
 #include "../all.h"
 

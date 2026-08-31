@@ -3,14 +3,14 @@
 #include "../all.h"
 
 #define MY_FONT 0
-#define MY_BLUE 20 // first color
+#define MY_BLUE 20
 #define MY_GREEN 21
 #define MY_RED 22
 #define MY_PURPLE 23
 #define MY_BROWN 24
 #define MY_CYAN 25
 #define MY_BLACK 26
-#define MY_GREY 27 // last color
+#define MY_GREY 27
 #define MY_WHITE 28
 
 static void	init_pairs(void)
