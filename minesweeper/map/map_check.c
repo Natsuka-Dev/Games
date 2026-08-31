@@ -59,7 +59,7 @@ int	done(t_map *map)
 {
 	for (int i = 0; i < (map ->x * map->y); i++)
 	{
-		if (map->cells[i].val[0] == '.')
+		if (map->cells[i].val == '.')
 			return (0);
 	}
 	return (1);

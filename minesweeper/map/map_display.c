@@ -8,13 +8,13 @@
 #define RED_MY_FONT 6
 #define WHITE_RED 18
 
-void	map_display(t_map *map, int pos, int done)
+void map_display(t_map *map, int pos, int done)
 {
-	t_elem	*node;
+	t_elem *node;
 
 	setlocale(LC_ALL, "");
 	addwstr(L"┌");
-	for(int i = 0; i < map->x; i++)
+	for (int i = 0; i < map->x; i++)
 		addwstr(L"──");
 	addwstr(L"─┐\n│ ");
 	for (int i = 0; i < ((map->x) * (map->y)); i++)
@@ -25,14 +25,14 @@ void	map_display(t_map *map, int pos, int done)
 		if (i == pos)
 		{
 			if (done)
-				color_cell(&node->hidden_val, WHITE_RED);
+				color_cell(node->hidden_val, WHITE_RED);
 			else
 				color_cell(node->val, BLACK_WHITE);
 		}
 		else if (done && map->cells[i].hidden_val == '*')
-			color_cell(&node->hidden_val, WHITE_BLACK);
-		else if (done && map->cells[i].val[0] == '*')
-			color_cell("*", RED_MY_FONT);
+			color_cell(node->hidden_val, WHITE_BLACK);
+		else if (done && map->cells[i].val == '*')
+			color_cell('*', RED_MY_FONT);
 		else
 			color_cell(node->val, WHITE_BLACK);
 		printw(" ");

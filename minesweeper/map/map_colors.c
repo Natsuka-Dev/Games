@@ -13,7 +13,7 @@
 #define MY_GREY 27
 #define MY_WHITE 28
 
-static void	init_pairs(void)
+static void init_pairs(void)
 {
 	init_pair(0, MY_WHITE, MY_FONT);
 	init_pair(1, MY_FONT, MY_WHITE);
@@ -36,7 +36,7 @@ static void	init_pairs(void)
 	init_pair(18, MY_WHITE, MY_RED); // defeat color
 }
 
-void	init_colors(void)
+void init_colors(void)
 {
 	start_color();
 	init_color(MY_FONT, 98, 98, 98);
@@ -52,16 +52,17 @@ void	init_colors(void)
 	init_pairs();
 }
 
-void	color_cell(char *cell, int font)
+void color_cell(char cell, int font)
 {
 	int i;
+	char str[2] = {cell, 0};
 
 	i = 0;
-	if (cell[0] == '.' || cell[0] == '*' || cell[0] == ' ')
+	if (cell == '.' || cell == '*' || cell == ' ')
 		i = 0;
 	else
-		i = cell[i] - '0';
+		i = cell - '0';
 	attron(COLOR_PAIR(i * 2 + font));
-	printw(cell);
+	printw(str);
 	attroff(COLOR_PAIR(i * 2 + font));
 }
